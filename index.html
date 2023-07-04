@@ -17,7 +17,7 @@
         data.folders.forEach(folder => {
           const listItem = document.createElement('li');
           const link = document.createElement('a');
-          link.href = folder;  // Define o atributo href para o diretório
+          link.href = 'repo/' + folder;  // Define o atributo href para o diretório
 
           link.textContent = folder;
           listItem.appendChild(link);

@@ -16,7 +16,11 @@
 
         data.folders.forEach(folder => {
           const listItem = document.createElement('li');
-          listItem.textContent = folder;
+          const link = document.createElement('a');
+          link.href = folder;  // Define o atributo href para o diretório
+
+          link.textContent = folder;
+          listItem.appendChild(link);
           foldersList.appendChild(listItem);
         });
       })

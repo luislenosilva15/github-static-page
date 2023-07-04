@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Folder</title>
+  <title>Listagem de Pastas</title>
 </head>
 <body>
-    
+  <h1>Listagem de Pastas</h1>
+  <ul id="folders-list"></ul>
+
+  <script>
+    fetch('folders.json')
+      .then(response => response.json())
+      .then(data => {
+        const foldersList = document.getElementById('folders-list');
+        foldersList.innerHTML = '';
+
+        data.folders.forEach(folder => {
+          const listItem = document.createElement('li');
+          listItem.textContent = folder;
+          foldersList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar o arquivo JSON:', error);
+      });
+  </script>
 </body>
 </html>

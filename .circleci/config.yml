@@ -23,7 +23,7 @@ jobs:
             git config --global user.name "luislenosilva15"
             git clone --branch=gh-pages git@github.com:luislenosilva15/github-static-page.git gh-pages
             # rm -rf gh-pages/*
-            cp -R storybook-static/* gh-pages/
+            cp -R storybook-static/* gh-pages/repos
             cd gh-pages
             git add .
             git commit -m "Deploy Storybook to GitHub Pages"

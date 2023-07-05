@@ -1,0 +1,21 @@
+name: Run Node Script
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Run Node Script
+        run: node ./ node list-folders.js

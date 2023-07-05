@@ -15,7 +15,7 @@ jobs:
             yarn
             yarn build-storybook
 
-      # Etapa para implantar o Storybook no GitHub Pages
+      # Etapa para implantar o Storybook no GitHub Pagess
       - run:
           name: Deploy to GitHub Pages
           command: |

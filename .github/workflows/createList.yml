@@ -18,4 +18,4 @@ jobs:
           node-version: 14
 
       - name: Run Node Script
-        run: node ./ node list-folders.js
+        run: node list-folders.js

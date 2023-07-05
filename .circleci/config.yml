@@ -24,9 +24,8 @@ jobs:
             git clone --branch=gh-pages git@github.com:luislenosilva15/github-static-page.git gh-pages
             mkdir -p gh-pages/repos/$CIRCLE_BRANCH
             cp -R storybook-static/* gh-pages/repos/$CIRCLE_BRANCH/
-           
 
-          - run:
+      - run:
           name: Run Node.js script
           command: |
             cd gh-pages

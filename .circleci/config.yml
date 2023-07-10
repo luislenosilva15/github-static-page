@@ -31,7 +31,7 @@ jobs:
             cd gh-pages
             BRANCHES=("feature", "master", "gh-pages")  # Substitua pelos nomes das suas branches
 
-            echo gh-pages
+            ls -la > "$gh-pages" 
 
             # for directory in */; do
             #   dir_name=${directory%/}

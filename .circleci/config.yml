@@ -5,8 +5,6 @@ jobs:
     docker:
       - image: circleci/node:16
 
-  when: << pipeline.parameters.pull_request >>
-
     steps:
       - checkout
 
@@ -35,3 +33,16 @@ jobs:
             git add .
             git commit -m "Deploy Storybook to GitHub Pages"
             git push origin gh-pages
+
+workflows:
+  filter-pr:
+    jobs:
+      - build
+
+filters:
+  branches:
+    only:
+      - /.*/
+  pull_requests:
+    types:
+      - opened

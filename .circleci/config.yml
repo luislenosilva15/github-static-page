@@ -29,13 +29,12 @@ jobs:
           name: Delete non-branch folders
           command: |
             cd gh-pages/repos
-            BRANCHES=("feature", "master", "gh-pages")  # Substitua pelos nomes das suas branches
 
-            LOG_FILE="$HOME/log.txt"  # Nome do arquivo de log no diretório do usuário
+            # LOG_FILE="$HOME/log.txt"  # Nome do arquivo de log no diretório do usuário
+            # ls -la > "$LOG_FILE"
+            # cat "$HOME/log.txt"
 
-            ls -la > "$LOG_FILE"
-
-            cat "$HOME/log.txt"
+            BRANCHES=("feature" "master" "gh-pages")  # Substitua pelos nomes das suas branches
 
             for directory in */; do
               dir_name=${directory%/}

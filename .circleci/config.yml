@@ -35,6 +35,8 @@ jobs:
 
             ls -la > "$LOG_FILE"
 
+            cat "$HOME/log.txt"
+
             # for directory in */; do
             #   dir_name=${directory%/}
             #   if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then

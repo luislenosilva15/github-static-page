@@ -34,9 +34,7 @@ jobs:
             # ls -la > "$LOG_FILE"
             # cat "$HOME/log.txt"
 
-            BRANCHES=$(git ls-remote --heads origin | awk -F'/' '{print $3}')
-
-            cat "$(BRANCHES)"
+            BRANCHES=($(git branch --format "%(refname:lstrip=2)"))
 
             for directory in */; do
               dir_name=${directory%/}

@@ -34,22 +34,3 @@ jobs:
             git add .
             git commit -m "Deploy Storybook to GitHub Pages"
             git push origin gh-pages
-
-workflows:
-  version: 2
-  build-and-test:
-    jobs:
-      - build
-
-filters:
-  branches:
-    only:
-      - /.*/
-  tags:
-    ignore: /.*/
-  pull_requests:
-    branches:
-      only:
-        - /.*/
-      paths:
-        - /.*/

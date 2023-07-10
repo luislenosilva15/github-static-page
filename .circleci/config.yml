@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Delete non-branch folders
           command: |
-            cd gh-pages
+            cd gh-pages/repos
             BRANCHES=("feature", "master", "gh-pages")  # Substitua pelos nomes das suas branches
 
             LOG_FILE="$HOME/log.txt"  # Nome do arquivo de log no diretório do usuário

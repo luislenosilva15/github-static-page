@@ -37,7 +37,7 @@ jobs:
             for directory in */; do
               dir_name=${directory%/}
               if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then
-                rm -rf "$dir_name"
+                sudo rm -rf "$dir_name"
                 echo "A pasta '$dir_name' foi excluída."
               fi
             done

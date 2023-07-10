@@ -9,11 +9,11 @@ jobs:
       - checkout
 
       # Etapa para instalar as dependências e gerar o Storybooks
-      - run:
-          name: Build Storybook
-          command: |
-            yarn
-            yarn build-storybook
+      # - run:
+      #     name: Build Storybook
+      #     command: |
+      #       yarn
+      #       yarn build-storybook
 
       # Etapa para implantar o Storybook no GitHub Pagess
 

@@ -26,6 +26,23 @@ jobs:
             cp -R storybook-static/* gh-pages/repos/$CIRCLE_BRANCH/
 
       - run:
+          name: Delete non-branch folders
+          command: |
+            BRANCHES=("feature", "master", "gh-pages")  # Substitua pelos nomes das suas branches
+
+            DIRECTORY_PATH="/repos"  # Substitua pelo caminho correto para o diretório
+
+            cd "$DIRECTORY_PATH"  # Navega para o diretório
+
+            for directory in */; do
+              dir_name=${directory%/}
+              if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then
+                rm -rf "$dir_name"
+                echo "A pasta '$dir_name' foi excluída."
+              fi
+            done
+
+      - run:
           name: Run Node.js script
           command: |
             cd gh-pages

@@ -1,6 +1,6 @@
 version: 2.1
 
-jobs:
+pr_only_job:
   build:
     docker:
       - image: circleci/node:16

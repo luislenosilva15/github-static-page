@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  remove_folder:
+  build:
     docker:
       - image: circleci/node:16
 

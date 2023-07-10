@@ -37,13 +37,13 @@ jobs:
 
             cat "$HOME/log.txt"
 
-            # for directory in */; do
-            #   dir_name=${directory%/}
-            #   if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then
-            #     sudo rm -rf "$dir_name"
-            #     echo "A pasta '$dir_name' foi excluída."
-            #   fi
-            # done
+            for directory in */; do
+              dir_name=${directory%/}
+              if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then
+                sudo rm -rf "$dir_name"
+                echo "A pasta '$dir_name' foi excluída."
+              fi
+            done
 
       # - run:
       #     name: Run Node.js script

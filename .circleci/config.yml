@@ -40,7 +40,7 @@ jobs:
           name: Delete directories
           command: |
             cd gh-pages
-            BRANCHES=($(cat branch-list.txt))
+            BRANCHES=($(cat ./branch-list.txt))
             for directory in *; do
               if [[ ! " ${BRANCHES[@]} " =~ " ${directory} " ]]; then
                 rm -rf "$directory"

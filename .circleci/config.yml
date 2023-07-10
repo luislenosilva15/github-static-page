@@ -5,6 +5,8 @@ jobs:
     docker:
       - image: circleci/node:16
 
+  when: << pipeline.parameters.pull_request >>
+
     steps:
       - checkout
 

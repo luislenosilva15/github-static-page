@@ -34,7 +34,7 @@ jobs:
             # ls -la > "$LOG_FILE"
             # cat "$HOME/log.txt"
 
-            BRANCHES=("feature" "master" "gh-pages")  # Substitua pelos nomes das suas branches
+            BRANCHES=$(git ls-remote --heads origin | awk -F'/' '{print $3}')
 
             for directory in */; do
               dir_name=${directory%/}

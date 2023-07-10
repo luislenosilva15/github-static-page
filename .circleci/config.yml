@@ -36,6 +36,8 @@ jobs:
 
             BRANCHES=$(git ls-remote --heads origin | awk -F'/' '{print $3}')
 
+            cat "$(BRANCHES)"
+
             for directory in */; do
               dir_name=${directory%/}
               if [[ ! " ${BRANCHES[@]} " =~ " ${dir_name} " ]]; then

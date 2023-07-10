@@ -31,9 +31,9 @@ jobs:
             cd gh-pages
             BRANCHES=("feature", "master", "gh-pages")  # Substitua pelos nomes das suas branches
 
-            LOG_FILE="log.txt"  # Nome do arquivo de log
+            LOG_FILE="$HOME/log.txt"  # Nome do arquivo de log no diretório do usuário
 
-            ls -la > "$CIRCLE_ARTIFACTS/$LOG_FILE"
+            ls -la > "$LOG_FILE"
 
             # for directory in */; do
             #   dir_name=${directory%/}

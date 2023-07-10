@@ -15,8 +15,7 @@ jobs:
             yarn
             yarn build-storybook
 
-      # Etapa para implantar o Storybook no GitHub Pages
-
+      # Etapa para implantar o Storybook no GitHub Pagess
       - run:
           name: Deploy to GitHub Pages
           command: |
@@ -25,18 +24,6 @@ jobs:
             git clone --branch=gh-pages git@github.com:luislenosilva15/github-static-page.git gh-pages
             mkdir -p gh-pages/repos/$CIRCLE_BRANCH
             cp -R storybook-static/* gh-pages/repos/$CIRCLE_BRANCH/
-
-      # - run:
-      #     name: Delete directories
-      #     command: |
-      #       cd gh-pages
-      #       BRANCHES=$(git ls-remote --heads origin | awk -F'/' '{print $3}')
-
-      #       for directory in *; do
-      #         if [[ ! " ${BRANCHES[@]} " =~ " ${directory} " ]]; then
-      #           rm -rf "$directory"
-      #         fi
-      #       done
 
       - run:
           name: Run Node.js script

@@ -9,11 +9,11 @@ jobs:
       - checkout
 
       # Etapa para instalar as dependências e gerar o Storybooks
-      # - run:
-      #     name: Build Storybook
-      #     command: |
-      #       yarn
-      #       yarn build-storybook
+      - run:
+          name: Build Storybook
+          command: |
+            yarn
+            yarn build-storybook
 
       # # Etapa para implantar o Storybook no GitHub Pagess
       - run:
@@ -23,7 +23,7 @@ jobs:
             git config --global user.name "luislenosilva15"
             git clone --branch=gh-pages git@github.com:luislenosilva15/github-static-page.git gh-pages
             mkdir -p gh-pages/repos/$CIRCLE_BRANCH
-            # cp -R storybook-static/* gh-pages/repos/$CIRCLE_BRANCH/
+            cp -R storybook-static/* gh-pages/repos/$CIRCLE_BRANCH/
 
       - run:
           name: Delete non-branch folders
@@ -44,12 +44,12 @@ jobs:
               fi
             done
 
-      # - run:
-      #     name: Run Node.js script
-      #     command: |
-      #       cd gh-pages
-      #       node list-folders.js
-      #       echo folders.json
-      #       git add .
-      #       git commit -m "Deploy Storybook to GitHub Pages"
-      #       git push origin gh-pages
+      - run:
+          name: Run Node.js script
+          command: |
+            cd gh-pages
+            node list-folders.js
+            echo folders.json
+            git add .
+            git commit -m "Deploy Storybook to GitHub Pages"
+            git push origin gh-pages
